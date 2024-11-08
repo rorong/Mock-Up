@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "15b75f744137900e56cd772f8f59bfac"
+name = "dummy-app"
+handle = "dummy-app-81"
+application_url = "https://barn-largely-twenty-inspiration.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "abc-local-5.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = [
+  "https://barn-largely-twenty-inspiration.trycloudflare.com/auth/callback",
+  "https://barn-largely-twenty-inspiration.trycloudflare.com/auth/shopify/callback",
+  "https://barn-largely-twenty-inspiration.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
